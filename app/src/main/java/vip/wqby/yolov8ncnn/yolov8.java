@@ -6,11 +6,6 @@ import android.graphics.Bitmap;
 import androidx.annotation.NonNull;
 
 public class yolov8 {
-
-    public yolov8(){
-
-    }
-
     public class Obj
     {
         public int x;

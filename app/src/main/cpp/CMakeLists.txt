@@ -14,6 +14,8 @@ find_package(ncnn REQUIRED)
 
 
 add_library(yolov8ncnn SHARED
-        yolov8.cpp)
+        yolov8.cpp
+        yolov8cls_Interface.cpp
+        yolov8cls.cpp)
 
 target_link_libraries(yolov8ncnn ncnn android log)

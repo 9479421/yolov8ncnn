@@ -14,8 +14,6 @@
 
 
 
-
-
 std::vector<std::string> classList = {"red_che", "red_ma", "red_xiang", "red_shi", "red_shuai", "red_pao", "red_bing", "black_che", "black_ma", "black_xiang",
                                       "black_shi", "black_jiang", "black_pao", "black_zu", "board"};
 

@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     yolov8 yolov8 = new yolov8();
+    yolov8cls yolov8cls = new yolov8cls();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,9 +32,10 @@ public class MainActivity extends AppCompatActivity {
 
 
         yolov8.init(getAssets(), true);
-
+        yolov8cls.init(getAssets(), true);
 
         binding.sampleText.setOnClickListener(v -> {
+            //识别
             try {
                 InputStream open = getAssets().open("1008.png");
                 yolov8.Obj[] detect = yolov8.detect(BitmapFactory.decodeStream(open));
@@ -43,6 +45,15 @@ public class MainActivity extends AppCompatActivity {
             } catch (Exception e) {
                 e.printStackTrace();
             }
+            //分类
+            try {
+                InputStream open = getAssets().open("fish.png");
+                int result = yolov8cls.classDetect(BitmapFactory.decodeStream(open));
+                System.out.println("clsResult:" + result);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+
         });
 
 
